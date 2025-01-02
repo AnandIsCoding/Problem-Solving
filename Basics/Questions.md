@@ -269,7 +269,7 @@
     Output: `9`  
     Explanation: The factorial of 4 is 24, and the sum of the digits (2 + 4) is 6.  
 
-29. **Finding the Largest Palindrome in a String**  
+29. **Finding the Largest Palindrome in a String**     ❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌
     **Difficulty**: Easy  
     **Topics**: Basic Programming, String Manipulation  
     **Description**: Write a program to find the largest palindrome in a given string.  
@@ -309,7 +309,7 @@
     **Example**:  
     Input: `array = [3, 1, 2, 4, 5]`  
     Output: `3`  
-    Explanation: The median of the sorted array [1, 2, 3, 4, 5] is 3.  
+    Explanation: The median of the sorted array [1, 2, 3, 4, 5] is 3. A median is the middle number in a sorted list of either ascending or descending numbers.  
 
 33. **Calculating the Power of a Number**  
     **Difficulty**: Easy  
