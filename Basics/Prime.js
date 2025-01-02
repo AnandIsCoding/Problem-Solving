@@ -12,11 +12,10 @@ let checkPrime = (number) =>{
     for(let i=2;i <= Math.sqrt(number);i++){
         if(number % i === 0){
             return ` ${number} is a Composite number`
-        }else{
-            return ` ${number} is a Prime number`
         }
     }
+    return ` ${number} is a Prime number`
 }
 
-const result = checkPrime(2)
+const result = checkPrime(15)
 console.log(result)
