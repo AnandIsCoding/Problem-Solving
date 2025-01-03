@@ -483,3 +483,41 @@
     Input: `string = "abcabcbb"`  
     Output: `"abc"`  
     Explanation: The longest substring without repeating characters is "abc".  
+
+
+
+51. **String Shifting Mystery: Can Left and Right Shifts Yield the Same Result?**
+    **Difficulty**: Hard
+    **Topics**: String Manipulation
+    Rakhul loves experimenting with strings and has recently discovered an intriguing game with string shifts. Given a string S consisting of lowercase English characters, he defines two operations: a left shift (L) and a right shift (R).
+Left Shift (L): Moves all characters in the string one step to the left, placing the first character at the end.
+Right Shift (R): Moves all characters in the string one step to the right, placing the last character at the beginning.
+For example:
+L("abcd") results in "bcda".
+R("abcd") results in "dabc".
+Rakhul wonders if there exists a string S such that performing both a left shift and a right shift on another string V results in S. In other words, can we find a string S for which both L(V) = S and R(V) = S hold true?
+Write a JavaScript program to determine whether such a string S exists. If it does, output "YES", otherwise output "NO".
+Problem Requirements:
+Functionality:
+Define a function that checks if there exists a string S where both L(V) = S and R(V) = S hold.
+Functions:
+lShift(s): Shifts all characters in s one step to the left.
+rShift(s): Shifts all characters in s one step to the right.
+Main logic to compare lShift(s) and rShift(s) to see if they are equal.
+Return:
+"YES" if both shifts can result in the same string, "NO" otherwise.
+
+                    // Do not remove nor make any changes in  main() function
+function main() {
+    var s = readLine();
+    console.log((lShift(s) === rShift(s)) ? 'YES' : 'NO');
+}
+function lShift(s) {
+    // Shifts all characters in `s` one step to the left
+    return s.substr(1) + s.charAt(0);
+}
+
+function rShift(s) {
+    // Shifts all characters in `s` one step to the right
+    return s.charAt(s.length - 1) + s.substr(0, s.length - 1);
+}
