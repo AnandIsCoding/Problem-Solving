@@ -6,7 +6,8 @@
 
 const countVowelsConsonants = (str) =>{
     let vowelcount = 0, consonantcount = 0
-    let vowels = 'aeiouAEIOU'
+    let vowels = 'aeiou'
+    str = str.toLowerCase()
     for(let letter=0;letter<str.length;letter++){
         if(vowels.includes(str[letter])){
             vowelcount++
