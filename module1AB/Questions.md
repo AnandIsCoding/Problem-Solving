@@ -56,3 +56,78 @@ Output: "Dream Big, Work Hard, And Stay Focused"
 Input: "hello world", "l"        Input: "Elephant", "E"
 Output: 3                        Output: 1
 **Note** : Characters are case-sensitive. For example, "AlmaBetter" contains 1 A and 1 a.
+
+
+**Fizz Buzz**
+**Write a JavaScript function fizzBuzz that takes a positive integer n as input and returns an array of strings.**
+Replace numbers divisible by 3 with "Fizz", numbers divisible by 4 with "Buzz", and numbers divisible by both 3 and 4 with "FizzBuzz".
+Input: 12
+Output: ["1", "2", "Fizz", "Buzz", "5", "Fizz", "7", "Buzz", "Fizz", "10", "11", "FizzBuzz"]
+
+
+**Character Reversal**
+**Write a JavaScript function reverseString that takes a string as input and returns the string with its characters reversed.**
+Input: "JavaScript"
+Output: "tpircSavaJ"
+
+
+**Sign of Product**
+**Write a JavaScript function signOfProduct that takes an array of integers as input and returns the sign of the product of all the integers in the array.**
+The function should return one of the following values:
+1 if the product is positive.
+-1 if the product is negative.
+0 if the product is zero.
+Implement the function efficiently, without actually computing the product.
+
+
+**Check Sign**
+**Write a JavaScript function checkSign that takes three numbers as input and returns a string representing the signs of the numbers.**
+If all three numbers are positive, return "+++"
+If two numbers are positive and one is negative, return "++-"
+If one number is positive and two are negative, return "+--"
+If all three numbers are negative, return "---"
+Input: 8, -3, 4
+Output: "++-"
+
+
+**URL Slug Generator**
+**Imagine you're working on a blog platform. Write a JavaScript function generateSlug that takes a title string and generates a URL-friendly slug by replacing spaces with hyphens and converting the text to lowercase.**
+Input: "Hello World"
+Output: "hello-world.com"
+
+
+**You are given a string consisting of characters, including spaces. Your task is to insert the character "7" immediately after every set of 6 characters from the start of the string, while ignoring spaces. The spaces should be skipped while counting the characters.**
+Write a JavaScript function insert7 that takes a string as input and returns the modified string after performing the required insertion.
+Input: "Hello World and Universe!"
+Output: "Hello W7orld an7d Unive7rse!"
+
+
+
+**Array Intersection**
+**Write a JavaScript function arrayIntersection that takes two arrays as input and returns a new array containing the elements that are common in both arrays, without any duplicates.**
+Input:     [70, 20, 30, 50], [30, 40, 50, 60, 70]
+Output:    [30, 50, 70]
+
+
+
+**Swap Consecutive Characters**
+**Write a JavaScript function swapConsecutiveCharacters that takes a string as input and rearranges the consecutive characters within the string in a swapped manner and returns a swapped string.**
+Input:   "abcdef"
+Output:  "badcfe"
+
+
+**Flip Game**  ⌚⌚⌚⌚⌚⌚⌚⌚⌚⏰⏰⏰⏰⏰⏰⏰⏰⏰⏰
+You are playing the following Flip Game with your friend: Given a string that contains only these two characters: + and -, you and your friend take turns to flip two consecutive "++" into "--". The game ends when a person can no longer make a move and therefore the other person will be the winner.
+Write a JavaScript function findMove that takes a string as input and calculates all the possible states of the string after a valid move has been made and return the states in an array of strings
+
+
+**Shortest Word Distance**
+Given an array of strings wordsDict and two distinct strings word1 and word2, which are both present in the array. Write a JavaScript function shortestDistance that returns the minimum distance between the positions of word1 and word2 within the list of words.
+Example 1:
+const wordsDict = ["practice", "makes", "perfect", "coding", "makes"];
+Input: wordsDict, "coding", "makes"
+Output: 1
+
+const wordsDict = ["apple", "banana", "cherry", "apple", "date", "banana", "fig"];
+Input: wordsDict, "apple", "fig"
+Output: 3
