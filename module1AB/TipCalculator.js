@@ -1,6 +1,6 @@
 function calculateTip(billAmount, tipPercentage) {
     // Write your code here
-    billAmount = Number(billAmount)
+     billAmount = Number(billAmount)
     tipPercentage = Number(tipPercentage)
     // Validate tipPercentage
     if(billAmount <= 0 || isNaN(billAmount)) return "The billAmount must be  positive numeric value"
@@ -14,3 +14,6 @@ function calculateTip(billAmount, tipPercentage) {
 }
 console.log(calculateTip(90.00, 0.10))  //99
 console.log(calculateTip(100, "abc")); // "The tipPercentage should be a number between 0 and 100.";
+
+// Do not modify the below lines
+module.exports = { calculateTip };

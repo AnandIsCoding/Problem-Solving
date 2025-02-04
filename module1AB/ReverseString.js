@@ -1,4 +1,5 @@
 const reverseString = (str) =>{
+    //input validation
     if(typeof str !== 'string' || str.trim() === ''){
         return 'input must be a non empty string'
     }

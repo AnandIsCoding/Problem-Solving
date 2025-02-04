@@ -1,6 +1,8 @@
 function countVowels(str) {
-    // array of vowels
+    // Write your code here
+    //input validation
     if(typeof str !== 'string') return 'Input string must be a string'
+    // array of vowels
     const vowels = ['a', 'e', 'i', 'o', 'u'];
     const lowerStr = str.toLowerCase();
     let count = 0;
@@ -12,4 +14,7 @@ function countVowels(str) {
     }
     return count;
 }
-console.log(countVowels('Almabetter'))
+console.log(countVowels('Almabetter')) //4
+
+// Do not modify the below lines
+module.exports = { countVowels };

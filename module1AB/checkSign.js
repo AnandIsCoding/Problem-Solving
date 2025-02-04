@@ -1,5 +1,5 @@
-const checkSign = (a,b,c) =>{
-    let arr = [a,b,c]
+const checkSign = (num1,num2,num3) =>{
+    let arr = [num1,num2,num3]
     let sign = ''
     if(arr.includes(0)) return 'No Zero accepted'
     arr.forEach((val,index)=>{

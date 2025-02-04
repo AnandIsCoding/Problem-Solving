@@ -1,5 +1,6 @@
 function isPalindrome(str) {
-    //validating str input
+    // Write your code here
+       //validating str input
     if (typeof str !== "string") {
         return false; // Return false for non-string inputs
     }
@@ -13,3 +14,6 @@ console.log(isPalindrome('787')); // true
 console.log(isPalindrome('hello')); // false
 console.log(isPalindrome('Madam, in Eden, I’m Adam')); // true
 console.log(isPalindrome('racEcaR')); // true
+
+// Do not modify the below lines
+module.exports = { isPalindrome };

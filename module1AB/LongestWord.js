@@ -25,7 +25,8 @@
 
 //using for of loop ------Approach2
 function findLongestWord(sentence) {
-	// validate
+	// Write your code here
+    // validate input
 	if(typeof sentence !== 'string') return 'Input must be a string'
     const words = sentence.split(' ');
     let maxLength = 0;
@@ -39,7 +40,6 @@ function findLongestWord(sentence) {
 
     return maxLength;
 }
-
 console.log(findLongestWord("The quick brown fox jumped over the lazy dog")) //6
 console.log(findLongestWord(" Coding is fun with fellow learners")) //8
 console.log(findLongestWord("")) //0
@@ -47,6 +47,4 @@ console.log(findLongestWord(108)) //Input must be a string
 
 // Do not modify the below lines
 module.exports = { findLongestWord };
-
-
 

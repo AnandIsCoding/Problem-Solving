@@ -131,3 +131,8 @@ Output: 1
 const wordsDict = ["apple", "banana", "cherry", "apple", "date", "banana", "fig"];
 Input: wordsDict, "apple", "fig"
 Output: 3
+
+
+
+
+ 17

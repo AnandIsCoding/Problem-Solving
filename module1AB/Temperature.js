@@ -1,6 +1,6 @@
 function convertTemperature(temperature, unit) {
     // Write your code here
-    if(isNaN(temperature)) return "Invalid input: Please provide a valid temperature."
+   if(isNaN(temperature)) return "Invalid input: Please provide a valid temperature."
     temperature = parseFloat(temperature)
     // Convert based on the unit provided
     if (unit === "C") {
@@ -20,3 +20,6 @@ console.log(convertTemperature("37.5", "C")); // 99.50 F
 console.log(convertTemperature("98.6", "F")); // 37.00 C
 console.log(convertTemperature("abc", "C")); // Invalid input: Please provide a valid temperature.
 console.log(convertTemperature("100", "X")); // Invalid unit. Use 'C' for Celsius or 'F' for Fahrenheit.
+
+// Do not modify the below lines
+module.exports = { convertTemperature };

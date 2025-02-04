@@ -1,5 +1,6 @@
 function titleCase(sentence) {
-  // validate
+	// write your code here
+   // validate
   if (typeof sentence !== "string" || sentence.trim() == "")
     return "Input Sentence must be a non empty string ";
   //trim sentence from both the end and split it on the basis of ' ' spaces which will create a new array of words
