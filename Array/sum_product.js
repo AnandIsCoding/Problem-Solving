@@ -5,7 +5,7 @@ const sumProductOfArray = (arr) =>{
     sum = arr.reduce((acc,curr)=>acc+curr,0)
     return {sum,product}
 }
-console.log(sumProductOfArray([1,2,3]))
+console.log(sumProductOfArray([1,2,3])) //🚀
 
 
 //2nd Approach using loops
@@ -19,4 +19,4 @@ const sumProductOfArray2 = (arr) =>{
     }
     return {sum,product}
 }
-console.log(sumProductOfArray2([1,2,3]))
+console.log(sumProductOfArray2([1,2,3])) //🚀

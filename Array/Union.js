@@ -14,7 +14,7 @@ let Union = (arr1, arr2) =>{
     }
     return uniqueUnion    
 }
-console.log(Union([1,2,3,4,8],[2,6,7,8]))   //[ 1, 2, 3, 4, 8, 6, 7 ]
+console.log(Union([1,2,3,4,8],[2,6,7,8]))   //[ 1, 2, 3, 4, 8, 6, 7 ] 🚀
 
 
 
@@ -24,7 +24,7 @@ let UnionUsingSet = (arr1, arr2) =>{
     return set
     
 }
-console.log(UnionUsingSet([1,2,3,4,8],[2,6,7,8]))   //Set(7) { 1, 2, 3, 4, 8, 6, 7 }
+console.log(UnionUsingSet([1,2,3,4,8],[2,6,7,8]))   //Set(7) { 1, 2, 3, 4, 8, 6, 7 } 🚀
 
 
 
