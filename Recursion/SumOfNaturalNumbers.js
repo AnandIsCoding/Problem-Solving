@@ -17,3 +17,13 @@ const sumOfNNaturalNumbersWith1Parameter = (n) =>{
     return n+sumOfN(n-1)
 }
 console.log(sumOfNNaturalNumbersWith1Parameter(5))
+
+
+
+
+// sum of digits 🫰🫰🫰🫰🫰🫰🫰🫰🫰🫰🫰🫰🫰🫰
+const sumOfDigits = (n) =>{
+    if(n === 0 )return n
+    return (n % 10) + sumOfDigits(Math.floor(n/10))
+}
+console.log(sumOfDigits(1233))
