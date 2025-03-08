@@ -8,3 +8,21 @@ const findMax = (arr,index,max) =>{
     }
 }
 console.log(findMax([1,2,3,4,8,4,5,6,7],0,0))
+
+
+
+
+
+
+
+
+const minElement = (arr,min,index) =>{
+    if(index == arr.length){
+        return min
+    }
+    if(arr[index] < min){
+        min = arr[index]
+    }
+    return minElement(arr,min,index + 1)
+ }
+ console.log(minElement([1,2,3,9,9,0,4],Infinity,0))
