@@ -2,15 +2,20 @@
 
 Regular Expressions (RegExp) are used for pattern matching and string manipulation. They are commonly used for validation, searching, and replacing text in programming.
 
+---
+
 ## 1. Basics of Regular Expressions
 A RegExp is written between two slashes `/.../` in JavaScript, or in quotes `"..."` for other languages.
 
 ### Examples
+
 | Pattern  | Description | Matches |
 |----------|------------|---------|
 | `/abc/` | Matches "abc" in a string | "abcdef", "123abc456" |
 | `/dog|cat/` | Matches "dog" or "cat" | "dog", "cat" |
 | `/hello/i` | Case-insensitive match | "hello", "Hello", "HELLO" |
+
+---
 
 ## 2. Regular Expression Syntax & Characters
 
@@ -33,7 +38,11 @@ These are normal characters that match themselves.
 | `{n,}` | Matches at least n occurrences | `/a{2,}/` → "aa", "aaa", "aaaa" |
 | `{n,m}` | Matches between n and m occurrences | `/a{2,4}/` → "aa", "aaa", "aaaa" |
 
-### C. Character Classes
+---
+
+## 3. Character Classes & Bracket Expressions
+
+### A. Character Classes
 
 | Pattern | Meaning | Example |
 |---------|---------|---------|
@@ -44,7 +53,7 @@ These are normal characters that match themselves.
 | `[0-9]` | Matches any digit | `/[0-9]/` → Matches "0" to "9" |
 | `[a-zA-Z0-9]` | Matches any letter or digit | `/[a-zA-Z0-9]/` |
 
-### D. Predefined Character Classes (Shortcuts)
+### B. Predefined Character Classes (Shortcuts)
 
 | Pattern | Meaning | Example |
 |---------|---------|---------|
@@ -54,16 +63,17 @@ These are normal characters that match themselves.
 | `\W` | Matches any non-word character | `/\W+/` → Matches "@!#" |
 | `\s` | Matches any whitespace (space, tab, newline) | `/\s+/` → Matches " " or "\t" |
 | `\S` | Matches any non-whitespace character | `/\S+/` → Matches "Hello" |
+| `\b` | Matches a word boundary | `/\bword\b/` → Matches "word" but not "words" |
+| `\B` | Matches a non-word boundary | `/\Bword\B/` → Matches "swordfight" but not "word fight" |
+| `\n` | Matches a newline character | `/line1\nline2/` → Matches "line1" followed by a newline and "line2" |
+| `\t` | Matches a tab character | `/word\tword/` → Matches "word" followed by a tab and "word" |
+| `\r` | Matches a carriage return | `/\r/` → Matches "\r" character |
+| `\f` | Matches a form feed character | `/\f/` → Matches "\f" character |
+| `\v` | Matches a vertical tab | `/\v/` → Matches "\v" character |
 
-### E. Anchors
+---
 
-| Pattern | Meaning | Example |
-|---------|---------|---------|
-| `^` | Matches the start of a string | `/^Hello/` → "Hello world" ✅, "World Hello" ❌ |
-| `$` | Matches the end of a string | `/world$/` → "Hello world" ✅, "world Hello" ❌ |
-| `\b` | Matches a word boundary | `/\bcat\b/` → Matches "cat" but not "caterpillar" |
-
-### F. Groups and Capturing
+## 4. Groups and Capturing
 
 | Pattern | Meaning | Example |
 |---------|---------|---------|
@@ -71,7 +81,9 @@ These are normal characters that match themselves.
 | `(?:abc)` | Non-capturing group | `/(?:ab)c/` → Matches "abc" but doesn't capture "ab" |
 | `\1` | Backreference (repeats captured group) | `/(\w+)\s\1/` → Matches "hello hello" |
 
-## 3. Advanced Regular Expression Tricks
+---
+
+## 5. Assertions
 
 - **Lookahead & Lookbehind Assertions**
   - Positive Lookahead: `/foo(?=bar)/` → Matches "foo" only if followed by "bar".
@@ -79,7 +91,20 @@ These are normal characters that match themselves.
   - Positive Lookbehind: `/(?<=\$)\d+/` → Matches numbers preceded by `$`.
   - Negative Lookbehind: `/(?<!\$)\d+/` → Matches numbers NOT preceded by `$`.
 
-## 4. Useful Regular Expressions
+---
+
+## 6. Flags in Regular Expressions
+
+| Flag | Meaning | Example |
+|------|---------|---------|
+| `g` | Global match | `/hello/g` → Matches all occurrences of "hello" in a string |
+| `i` | Case-insensitive match | `/hello/i` → Matches "hello", "Hello", "HELLO" |
+| `m` | Multiline mode | `/^start/m` → Matches "start" at the beginning of each line |
+| `s` | Allows `.` to match newline characters | `/hello.world/s` → Matches "hello\nworld" |
+
+---
+
+## 7. Useful Regular Expressions
 
 | Task | Regex | Example Match |
 |------|-------|--------------|
@@ -88,6 +113,7 @@ These are normal characters that match themselves.
 | Validate date (DD-MM-YYYY) | `/^\d{2}-\d{2}-\d{4}$/` | "18-03-2025" |
 | Validate URL | `/^(https?:\/\/)?(www\.)?\w+\.\w+$/` | "https://google.com" |
 
+---
+
 ## Conclusion
 Regular Expressions are a powerful tool for text processing. Mastering them will make you more efficient in handling string manipulation tasks. Try experimenting with different patterns to solidify your understanding!
-
