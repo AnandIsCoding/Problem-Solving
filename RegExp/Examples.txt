@@ -1,0 +1,44 @@
+simple url regExp : 
+
+(www\.)?https:\/\/[a-zA-Z0-9]*(\.[a-zA-Z0-9]+)*\.[a-zA-Z]+
+
+
+
+to match end    ok$  ✅
+                hello ok ok
+
+                k0$  ❌
+
+
+match surname --->  
+  j/.+jha$/gmi
+
+  Anand jha     ✅
+  Aditya Jha    ✅
+  Aditya roy    ❌
+
+
+
+  match any with jha in last or btw
+
+  .*jha.*
+
+
+  phone number :    \d{10}$
+
+
+
+
+  date :    /^\d{2}(-|\/)\d{02}\1\d{4}$/gm
+
+
+  match word in between of others /\Bcat\B/gm
+  catti ❌  hicathi ✅
+   cats ❌
+
+   match single word 
+
+   catti ❌  hicathi ❌
+   cats ✅
+
+            

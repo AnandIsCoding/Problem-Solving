@@ -11,9 +11,9 @@ A RegExp is written between two slashes `/.../` in JavaScript, or in quotes `"..
 
 | Pattern  | Description | Matches |
 |----------|------------|---------|
-| `/abc/` | Matches "abc" in a string | "abcdef", "123abc456" |
-| `/dog|cat/` | Matches "dog" or "cat" | "dog", "cat" |
-| `/hello/i` | Case-insensitive match | "hello", "Hello", "HELLO" |
+| `/^abc$/` | Matches exactly "abc" | "abc" (✅), "abcdef" (❌) |
+| `/^dog|cat$/` | Matches "dog" or "cat" as a whole string | "dog" (✅), "cat" (✅), "doghouse" (❌) |
+| `/^hello$/i` | Case-insensitive match of whole string | "hello" (✅), "Hello" (✅), "HELLO" (✅), "hello world" (❌) |
 
 ---
 
@@ -22,21 +22,21 @@ A RegExp is written between two slashes `/.../` in JavaScript, or in quotes `"..
 ### A. Literal Characters
 These are normal characters that match themselves.
 
-- `/abc/` → matches "abc" exactly.
+- `/^abc$/` → Matches only "abc" exactly.
 
 ### B. Metacharacters (Special Characters)
 
 | Symbol | Meaning | Example |
 |--------|---------|---------|
-| `.` | Matches any character except newline | `/c.t/` → "cat", "cut", "cot" |
-| `^` | Matches the start of a string | `/^hello/` → "hello world" (✅) but not "world hello" (❌) |
-| `$` | Matches the end of a string | `/world$/` → "hello world" (✅) but not "world hello" (❌) |
-| `*` | Matches 0 or more occurrences of the preceding character | `/ab*c/` → "ac", "abc", "abbc", "abbbc" |
-| `+` | Matches 1 or more occurrences | `/ab+c/` → "abc", "abbc", "abbbc" (✅), but not "ac" (❌) |
-| `?` | Matches 0 or 1 occurrence (optional character) | `/colou?r/` → Matches "color" and "colour" |
-| `{n}` | Matches exactly n occurrences | `/a{3}/` → "aaa" (✅), "aa" (❌) |
-| `{n,}` | Matches at least n occurrences | `/a{2,}/` → "aa", "aaa", "aaaa" |
-| `{n,m}` | Matches between n and m occurrences | `/a{2,4}/` → "aa", "aaa", "aaaa" |
+| `.` | Matches any character except newline | `/^c.t$/` → Matches "cat", "cut", "cot" |
+| `^` | Matches the start of a string | `/^hello/` → Matches "hello world" (✅) but not "world hello" (❌) |
+| `$` | Matches the end of a string | `/world$/` → Matches "hello world" (✅) but not "world hello" (❌) |
+| `*` | Matches 0 or more occurrences of the preceding character | `/^ab*c$/` → Matches "ac", "abc", "abbc", "abbbc" |
+| `+` | Matches 1 or more occurrences | `/^ab+c$/` → Matches "abc", "abbc", "abbbc" (✅), but not "ac" (❌) |
+| `?` | Matches 0 or 1 occurrence (optional character) | `/^colou?r$/` → Matches "color" and "colour" |
+| `{n}` | Matches exactly n occurrences | `/^a{3}$/` → Matches "aaa" (✅), "aa" (❌) |
+| `{n,}` | Matches at least n occurrences | `/^a{2,}$/` → Matches "aa", "aaa", "aaaa" |
+| `{n,m}` | Matches between n and m occurrences | `/^a{2,4}$/` → Matches "aa", "aaa", "aaaa" |
 
 ---
 
@@ -46,30 +46,24 @@ These are normal characters that match themselves.
 
 | Pattern | Meaning | Example |
 |---------|---------|---------|
-| `[abc]` | Matches any character in brackets | `/[abc]/` → Matches "a", "b", or "c" |
-| `[^abc]` | Matches any character not in brackets | `/[^abc]/` → Matches any character except "a", "b", or "c" |
-| `[a-z]` | Matches any lowercase letter | `/[a-z]/` → Matches "a" to "z" |
-| `[A-Z]` | Matches any uppercase letter | `/[A-Z]/` → Matches "A" to "Z" |
-| `[0-9]` | Matches any digit | `/[0-9]/` → Matches "0" to "9" |
-| `[a-zA-Z0-9]` | Matches any letter or digit | `/[a-zA-Z0-9]/` |
+| `/^[abc]$/` | Matches exactly "a", "b", or "c" | "a" (✅), "b" (✅), "c" (✅), "ab" (❌) |
+| `/^[^abc]$/` | Matches any character not in brackets | "x" (✅), "y" (✅), "a" (❌) |
+| `/^[a-z]$/` | Matches any single lowercase letter | "f" (✅), "G" (❌) |
+| `/^[A-Z]$/` | Matches any single uppercase letter | "M" (✅), "m" (❌) |
+| `/^[0-9]$/` | Matches any single digit | "5" (✅), "55" (❌) |
+| `/^[a-zA-Z0-9]$/` | Matches any letter or digit | "A" (✅), "9" (✅), "_" (❌) |
 
 ### B. Predefined Character Classes (Shortcuts)
 
 | Pattern | Meaning | Example |
 |---------|---------|---------|
-| `\d` | Matches any digit (0-9) | `/\d+/` → Matches "123", "4567" |
-| `\D` | Matches any non-digit | `/\D+/` → Matches "abc", "Hello" |
-| `\w` | Matches any word character (a-z, A-Z, 0-9, _) | `/\w+/` → Matches "hello123", "abc_def" |
-| `\W` | Matches any non-word character | `/\W+/` → Matches "@!#" |
-| `\s` | Matches any whitespace (space, tab, newline) | `/\s+/` → Matches " " or "\t" |
-| `\S` | Matches any non-whitespace character | `/\S+/` → Matches "Hello" |
-| `\b` | Matches a word boundary | `/\bword\b/` → Matches "word" but not "words" |
-| `\B` | Matches a non-word boundary | `/\Bword\B/` → Matches "swordfight" but not "word fight" |
-| `\n` | Matches a newline character | `/line1\nline2/` → Matches "line1" followed by a newline and "line2" |
-| `\t` | Matches a tab character | `/word\tword/` → Matches "word" followed by a tab and "word" |
-| `\r` | Matches a carriage return | `/\r/` → Matches "\r" character |
-| `\f` | Matches a form feed character | `/\f/` → Matches "\f" character |
-| `\v` | Matches a vertical tab | `/\v/` → Matches "\v" character |
+| `/^\d+$/` | Matches entire string as digits | "123" (✅), "abc123" (❌) |
+| `/^\D+$/` | Matches entire string as non-digits | "abc" (✅), "123abc" (❌) |
+| `/^\w+$/` | Matches entire string as word characters | "hello123" (✅), "hello-123" (❌) |
+| `/^\W+$/` | Matches entire string as non-word characters | "@!#" (✅), "hello!" (❌) |
+| `/^\s+$/` | Matches entire string as whitespace | "  " (✅), "hello world" (❌) |
+| `/^\S+$/` | Matches entire string as non-whitespace | "Hello" (✅), "Hello world" (❌) |
+| `/^\bword\b$/` | Matches "word" as a whole word | "word" (✅), "words" (❌) |
 
 ---
 
@@ -77,19 +71,19 @@ These are normal characters that match themselves.
 
 | Pattern | Meaning | Example |
 |---------|---------|---------|
-| `(abc)` | Capturing group | `/(ab)c/` → Captures "ab" |
-| `(?:abc)` | Non-capturing group | `/(?:ab)c/` → Matches "abc" but doesn't capture "ab" |
-| `\1` | Backreference (repeats captured group) | `/(\w+)\s\1/` → Matches "hello hello" |
+| `/^(abc)$/` | Capturing group | "abc" (✅), "xabcx" (❌) |
+| `/^(?:abc)$/` | Non-capturing group | Matches "abc" but doesn't capture |
+| `/^(\w+)\s\1$/` | Backreference (repeats captured group) | "hello hello" (✅), "hello world" (❌) |
 
 ---
 
 ## 5. Assertions
 
 - **Lookahead & Lookbehind Assertions**
-  - Positive Lookahead: `/foo(?=bar)/` → Matches "foo" only if followed by "bar".
-  - Negative Lookahead: `/foo(?!bar)/` → Matches "foo" only if NOT followed by "bar".
-  - Positive Lookbehind: `/(?<=\$)\d+/` → Matches numbers preceded by `$`.
-  - Negative Lookbehind: `/(?<!\$)\d+/` → Matches numbers NOT preceded by `$`.
+  - Positive Lookahead: `/^foo(?=bar)$/` → Matches "foo" only if followed by "bar".
+  - Negative Lookahead: `/^foo(?!bar)$/` → Matches "foo" only if NOT followed by "bar".
+  - Positive Lookbehind: `/(?<=\$)\d+$/` → Matches numbers preceded by `$`.
+  - Negative Lookbehind: `/(?<!\$)\d+$/` → Matches numbers NOT preceded by `$`.
 
 ---
 
@@ -115,5 +109,122 @@ These are normal characters that match themselves.
 
 ---
 
+# Understanding Special Characters
+
+Regular Expressions (RegExp) use various special characters to define patterns for text matching. This document explains the differences between `|`, `\`, `/`, `()`, `{}`, `[]`, and `?` in RegExp.
+
+---
+
+## 1. `|` (Pipe - Alternation)
+- Acts as an OR operator.
+- Matches either the pattern on the left or the pattern on the right.
+
+### Example:
+```regex
+/dog|cat/
+```
+- **Matches:** "dog" or "cat"
+
+---
+
+## 2. `\` (Backslash - Escape Character)
+- Escapes special characters, making them behave literally.
+- Used for predefined character classes like `\d` (digits) and `\s` (whitespace).
+
+### Example:
+```regex
+/hello\./
+```
+- **Matches:** "hello." (with a period)
+
+```regex
+/\d{3}/
+```
+- **Matches:** Any three-digit number (e.g., "123", "456")
+
+---
+
+## 3. `/` (Forward Slash - Regex Delimiters)
+- Used in JavaScript, Perl, and other languages to **delimit** regex patterns.
+- Not a regex operator itself.
+
+### Example in JavaScript:
+```javascript
+const regex = /hello/;
+console.log(regex.test("hello world")); // true
+```
+
+---
+
+## 4. `()` (Parentheses - Grouping & Capturing)
+- Groups expressions.
+- Captures matched text for later reference.
+
+### Example:
+```regex
+/(ab)c/
+```
+- **Matches:** "abc", capturing "ab"
+
+- Non-Capturing Group: `(?:...)`
+  ```regex
+  /(?:ab)c/
+  ```
+  - Matches "abc" but does not capture "ab"
+
+---
+
+## 5. `{}` (Curly Braces - Quantifiers)
+- Specifies exact repetition of characters or patterns.
+
+### Examples:
+```regex
+/a{3}/  
+```
+- **Matches:** "aaa"
+
+```regex
+/a{2,5}/
+```
+- **Matches:** "aa", "aaa", "aaaa", or "aaaaa"
+
+---
+
+## 6. `[]` (Square Brackets - Character Sets)
+- Matches **any** one of the characters inside.
+- `[^...]` negates the set (matches any character **not** inside).
+
+### Examples:
+```regex
+/[aeiou]/
+```
+- **Matches:** Any vowel
+
+```regex
+/[^0-9]/
+```
+- **Matches:** Any non-digit character
+
+---
+
+## 7. `?` (Question Mark - Optional & Lazy Quantifier)
+- Makes the preceding character or group **optional** (0 or 1 occurrence).
+- Also used for lazy matching.
+
+### Examples:
+```regex
+/colou?r/
+```
+- **Matches:** "color" or "colour"
+
+```regex
+/ab+?/
+```
+- **Matches:** "ab" but **stops at the first match** (lazy quantifier)
+
+---
+
+
 ## Conclusion
 Regular Expressions are a powerful tool for text processing. Mastering them will make you more efficient in handling string manipulation tasks. Try experimenting with different patterns to solidify your understanding!
+
