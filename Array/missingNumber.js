@@ -1,8 +1,9 @@
-const missingNumber = (seq) =>{
-    let n = seq.length+1
-     let sumOfNatural = (n * (n + 1)) / 2;
-    let sumOfSeq = seq.reduce((acc,curr)=> acc+curr,0)
-    return  Math.abs(sumOfNatural - sumOfSeq )
+const missingNumber = (nums) =>{
+        // your Code Goes Here
+    let n= nums.length
+    let sumOfNaturalNumbers =  (n * (n + 1)) / 2;
+    let sumOfNumbers = nums.reduce((acc,curr)=> acc+curr,0)
+    return  Math.abs(sumOfNaturalNumbers - sumOfNumbers)
 }
 console.log(missingNumber([1,2,3,5]))   
 
