@@ -16,3 +16,12 @@ const calculateSum = (number) =>{
 }
 const result = calculateSum(1234)
 console.log(result)
+
+
+// using reduce and in simple way
+
+const sumOfDigits = (n) =>{
+    let arr = n.toString().split('')
+   return arr.reduce((curr,acc)=>Number(curr)+Number(acc),0)
+}
+console.log(sumOfDigits(123))
