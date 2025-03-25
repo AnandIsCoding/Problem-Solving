@@ -1,0 +1,19 @@
+// Do not remove nor make any changes in  main() function
+function main() {
+    var str = readLine();
+    var pattern = readLine();
+    console.log(findPatternOccurrences(str, pattern));
+}
+function findPatternOccurrences(str, pattern) {
+  // Your code goes here
+  let ans =[]
+  for(let i=0;i<=str.length-pattern.length;i++){
+    if(str.substring(i,i+pattern.length) === pattern){
+        ans.push(i)
+    }
+  }
+  return ans
+}
+
+// The task is to find all occurrences of a specified pattern within a given string. The search should be case-sensitive and return the starting indices of each occurrence.
+// For instance, in the string "ababcababc", the pattern "abc" occurs twice at indices 2 and 7.

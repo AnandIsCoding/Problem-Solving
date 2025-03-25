@@ -1,13 +1,12 @@
-// by sorting the array, element before lastindex will be 2nd largest element in sorted array
-const secondLargest = (arr) =>{
-    if(arr.length<2) return 'there is only on element in the array'
-    let sortedArr = arr.sort((a,b)=>{
-        return a-b}
-    )
-    return sortedArr[sortedArr.length-2]
-}
-console.log(secondLargest([2,3,4,1]))
 
+function findSecondLargestDistinct(arr) {
+    // Your code goes here
+    arr = [...new Set(arr)]
+     arr = arr.sort((a,b)=>b-a)
+    if(arr.length < 2){
+      return -1
+    }
+}
 
 
 

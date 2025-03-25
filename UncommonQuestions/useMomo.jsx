@@ -40,3 +40,7 @@ export default function App() {
 //          Expensive calculations
 //          Filtering large lists
 //          Avoiding unnecessary object re-creation
+
+// let array = [1,2,3,4,5]
+// console.log(array.slice(-1,2))
+// console.log(array.splice(-2,2))
