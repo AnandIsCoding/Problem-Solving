@@ -1,14 +1,7 @@
 const isPallindrome = (n) =>{
-    n = n.toString()
-    let start=0,end=n.length-1
-    while(start<=end){
-        if(n[start] !== n[end]){
-            return false;
-        }
-        start++
-        end--
-    }
-    return true
+   // Convert number to string, split into array, reverse it, and check if it matches the original
+   let rev = n.toString().split('').reverse().join('');
+   return n.toString() === rev;
 }
 console.log(isPallindrome(12345))   // false
 console.log(isPallindrome(12321))   // true

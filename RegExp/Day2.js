@@ -15,6 +15,8 @@ console.log(/\d/.test(str))
 
 // ----------------------------------------------------------------
 
-const mobileNumber = 7667642000
-const mobileRegex = /^\d{10}$/
-console.log('Is Mobile no Correct ', mobileRegex.test(mobileNumber))
+function isValidPhoneNumber(phoneNumber) {
+    // Your code goes here
+    let regex = /^[987]\d{9}$/
+    return regex.test(phoneNumber)
+  }

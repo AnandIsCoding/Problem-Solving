@@ -1,4 +1,4 @@
-const sortPeople = function(names, heights) {
+function sortPeople(names, heights){
     // Your code here
     return names.map((name,index)=>({name,height:heights[index]})).sort((a,b)=>b.height-a.height).map((item)=>item.name)
 };

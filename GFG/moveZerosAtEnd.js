@@ -26,4 +26,4 @@ const moveZerosAtEndInPlace = (arr) =>{
     return arr
 }
 
-console.log(moveZerosAtEndInPlace([0,0,8,7,0,2,0,0,0,1]))
+console.log(moveZerosAtEndInPlace([9,0,0,8,7,0,2,0,0,0,0]))
