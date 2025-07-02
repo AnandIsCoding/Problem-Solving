@@ -1,26 +1,17 @@
-// Do not remove nor make any changes in main() function
-function main() {
-    let n=parseInt(readLine());
-    let arr=[];
-    for(let i=0;i<n;i++){
-        let num=parseInt(readLine());
-        arr.push(num);
-    }
-    console.log(bubbleSort(arr,n));
-}
-function bubbleSort( arr, n){
-  // Your code goes here
-  for(let i=0;i<n;i++){
-        for(let j=0;j<n-i-1;j++){
-            if(arr[j] > arr[j+1]){
-                [arr[j], arr[j+1]] = [arr[j+1], arr[j]]
-            }
+const bubbleSort = (arr) =>{
+    for(let i=0;i<arr.length;i++){
+        let isSorted = true
+        for(let j=0;j<arr.length-i;j++){
+            if(arr[j-1] > arr[j]) [arr[j],arr[j-1]] = [arr[j-1],arr[j]]
+            isSorted = false
         }
-  }
-  return arr
+        if(isSorted) break
+    }
+    return arr
 }
+console.log(bubbleSort([8,7,6,5,4]))
 
-// [5,3,8,4,2]
+// [ 4, 5, 6, 7, 8 ]
 
 
 //  Time Complexity of Bubble Sort

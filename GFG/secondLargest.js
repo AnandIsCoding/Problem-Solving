@@ -1,17 +1,18 @@
-const Largest = (nums) =>{
+const secondLargest = (arr) => {
     let max = -Infinity, smax = -Infinity
-    for(let i=0;i<nums.length;i++){
-        if(nums[i] > max){
+    if(arr.length<=1) return arr
+    for(let i=0;i<arr.length;i++){
+        if(arr[i]>max){
             smax = max
-            max = nums[i]
-        }else if(nums[i] > smax && nums[i] < max){
-            smax = nums[i]
-        }
+            max = arr[i]
+        }else if(arr[i]>smax && arr[i]<max) smax = arr[i]
     }
-    return {max,smax}
+    return smax
 }
+console.log(secondLargest([10,20,20]))
 
-console.log(Largest([1,2,3,4,5,6,7,8,8]))    // { max: 8, smax: 7 }
+// in else if arr[i]<max is necessary when array contains duplicates
+
 
 
 

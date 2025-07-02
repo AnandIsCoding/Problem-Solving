@@ -1,14 +1,16 @@
-function isIsomorphic(s, t) {
-    // Your code goes here
-    if(s.trim().length !== t.trim().length) return false
-    let mapS = new Map(), mapT = new Map()
-    for(let i=0;i<s.length;i++){
-        if((mapS.has(s[i]) && mapS.get(s[i]) !== t[i]) || (mapT.get(t[i]) && mapT.get(t[i]) !== s[i])){
-            return false
-        }
-        mapS.set(s[i], t[i])
-        mapT.set(t[i], s[i])
-    }
-    return true
-}
+var isIsomorphic = function(s, t) {
+     if(s.length !== t.length) return false
+     let sMap = new Map(), tMap = new Map()
+     for(let i=0;i<s.length;i++){
+         let charS = s[i], charT = t[i]
+         if(sMap.has(charS) && (sMap.get(charS) ) !== charT) return false
+         if(tMap.has(charT) && (tMap.get(charT) !== charS)) return false
+         sMap.set(charS, charT)
+         tMap.set(charT, charS)
+     }
+     return true
+};
+
 console.log(isIsomorphic('egg','add'))
+console.log(isIsomorphic('foo','bar'))
+console.log(isIsomorphic('badc','baba'))
