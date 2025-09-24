@@ -1,13 +1,12 @@
-var firstMissingPositive = function(nums) {
-    let start=0,end = nums.length-1, ans = -1
-    while(start<=end){
-        let mid = start + Math.floor((end-start)/2)
-        if(nums[mid] === mid) start = mid+1
-        else{
-            ans = mid
-            end = mid - 1
-        }
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+
+var firstMissingPositive = function (arr) {
+    arr = [...new Set(arr)].filter(x => x > 0).sort((a,b)=>a-b)
+    for(let i=0;i<arr.length;i++){
+        if( arr[i] !== i+1 ) return i+1
     }
-    return ans
+    return arr.length+1
 };
-console.log(firstMissingPositive([0,1,3,4,5,6,7]))
